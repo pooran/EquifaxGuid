@@ -27,9 +27,10 @@ namespace Equifax
                 $"{secureTimestamp.Day:00}" +
                 $"{secureTimestamp.Year % 100:00}" +
                 $"{secureTimestamp.Hour:00}" +
-                $"{secureTimestamp.Minute:00}"+
-                $"{secureTimestamp.Second:00}"+
-                $"{secureTimestamp.Millisecond:000}" + (random.Next(10,99))
+                $"{secureTimestamp.Minute:00}" +
+                $"{secureTimestamp.Second:00}" +
+                $"{secureTimestamp.Millisecond:000}" + 
+                (random.Next(10,99))
                 );
     }
 }
