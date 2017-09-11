@@ -7,6 +7,8 @@ namespace Equifax
     /// </summary>
     public static class Guid
     {
+        private static Random random = new Random(10);
+       
         /// <summary>
         /// Creates a new Equifax secure GUID using the current UTC time.
         /// UTC ensures global consistency and uniqueness.
@@ -20,11 +22,14 @@ namespace Equifax
         /// </summary>
         public static System.Guid NewGuid(DateTime secureTimestamp)
             => new System.Guid(
-                "00000000-0000-0000-0000-00" +
+                "000000000000000" +
                 $"{secureTimestamp.Month:00}" +
                 $"{secureTimestamp.Day:00}" +
                 $"{secureTimestamp.Year % 100:00}" +
                 $"{secureTimestamp.Hour:00}" +
-                $"{secureTimestamp.Minute:00}");
+                $"{secureTimestamp.Minute:00}"+
+                $"{secureTimestamp.Second:00}"+
+                $"{secureTimestamp.Millisecond:000}" + (random.Next(10,99))
+                );
     }
 }
